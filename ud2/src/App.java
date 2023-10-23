@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        e220();
+        e222();
     }
     public static void e201(){
         
@@ -387,16 +387,16 @@ public class App {
         if (menu == 1) {
             int max = num[0];
 
-            for (int i = 1; i < num.length; i++) {
+            for (int i = 0; i < num.length; i++) {
                 max = Math.max(max, num[i]);
             }
 
-            System.out.println("Maximo valor es" + max);
+            System.out.println("Maximo valor es " + max);
         }
         else if (menu == 2) {
             int min = num[0];
 
-            for (int i = 1; i < num.length; i++) {
+            for (int i = 0; i < num.length; i++) {
                 min = Math.min(min, num[i]);
             }
 
@@ -415,20 +415,122 @@ public class App {
         else {
             System.out.println("Adios");
         }
-
         sc.close();
     }
     public static void e221(){
-        System.out.println("hola");
+        
+        // 0 to 100
+        
+        double randomNum = (double)(Math.random() * 1);
+        //System.out.println(randomNum);
+        
+        // programa
+        
+        if (randomNum <= 0.5) {
+            System.out.println("1");
+        }
+        else if (randomNum >= 0.51 && randomNum <= 0.7) {
+            System.out.println("x");
+        }
+        else {
+            System.out.println("2");
+        }
     }
     public static void e222(){
-        System.out.println("hola");
+
+        //variables
+        
+        int menu = 1;
+        int[] num = new int[5];
+
+        //scanner
+
+        Scanner sc = new Scanner(System.in);
+
+        //programa
+        
+        System.out.println("Este programa recoge los 5 numeros que deseas.");
+
+        for (int i = 0; i < num.length; i++) {
+        System.out.println("Dime un numero");
+        num[i] = sc.nextInt();
+        }
+        
+        System.out.println("Selecciona diciendome la opción que quieres");
+        System.out.println("1. Muestrame el array");
+        System.out.println("2. Incrementa en 1 los valores del array");
+        System.out.println("3. Salir");
+        menu = sc.nextInt();
+        sc.close();
+
+        if (menu == 1) {
+            for (int i = 0; i < num.length; i++) {
+                System.out.print(num[i] + "; ");
+            }
+        }
+        else if (menu == 2) {
+            for (int i = 0; i < num.length; i++) {
+                num[i] = num[i] + 1 ;
+                System.out.print(num[i] + "; ");
+            }
+        }
+        else {
+            System.out.println("Adios");
+        }
     }
     public static void e223(){
-        System.out.println("hola");
+
+        //variables
+        
+        int[] num = new int[5];
+
+        //scanner
+
+        Scanner sc = new Scanner(System.in);
+
+        //programa
+        
+        System.out.println("Este programa recoge los 5 numeros que deseas.");
+
+        for (int i = 0; i < num.length; i++) {
+        System.out.println("Dime un numero");
+        num[i] = sc.nextInt();
+        System.out.println("Los numeros pares son:");
+
+        }
+        sc.close();
+
+        for (int i = 0; i < num.length; i++) {  
+            if(num[i] % 2 == 0) {  
+                System.out.println(num[i]);
+            }
+        }
     }
     public static void e224(){
-        System.out.println("hola");
+
+        //variables
+        
+        String[] palabras = new String[5];
+
+        //scanner
+
+        Scanner sc = new Scanner(System.in);
+
+        //programa
+        
+        System.out.println("Este programa recoge 5 palabras que deseas.");
+
+        for (int i = 0; i < palabras.length; i++) {
+        System.out.println("Dime palabras");
+        palabras[i] = sc.nextLine();
+        }
+        sc.close();
+
+        System.out.println("Sus palabras en orden invertido son:");
+
+        for (int i = 4; i >= 0; i--) {  
+            System.out.println(palabras[i]);
+        }
     }
     public static void e225(){
         System.out.println("hola");
